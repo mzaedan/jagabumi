@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BeritaController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProjectController;
@@ -34,6 +35,7 @@ Route::prefix('admin')
     ->middleware(['auth', 'admin'])
     ->group(function() {
         Route::resource('project', ProjectController::class);
+        Route::resource('berita', BeritaController::class);
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     });
 

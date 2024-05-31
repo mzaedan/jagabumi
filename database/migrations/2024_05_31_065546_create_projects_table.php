@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('tempat kumpul');
             $table->string('batas registrasi');
             $table->string('link');
+            $table->string('project_status');
             $table->timestamps();
         });
     }

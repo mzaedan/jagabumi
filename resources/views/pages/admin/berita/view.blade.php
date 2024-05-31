@@ -14,28 +14,20 @@
         <div class="card-body">
             <table class="table table-bordered">
             <tr>
-                <th>Nama Kegiatan</th>
-                <td>{{ $data->nama_kegiatan }}</td>
+                <th>Judul Berita</th>
+                <td>{{ $data->judul_berita }}</td>
             </tr>
             <tr>
-                <th>Tanggal Kegiatan</th>
-                <td>{{ $data->tanggal_kegiatan }}</td>
+                <th>Lokasi</th>
+                <td>{{ $data->lokasi }}</td>
             </tr>
             <tr>
-                <th>Lokasi Kegiatan</th>
-                <td>{{ $data->lokasi_kegiatan }}</td>
+                <th>Tanggal</th>
+                <td>{{ $data->tanggal }}</td>
             </tr>
             <tr>
-                <th>Tempat Kumpul</th>
-                <td>{{ $data->tempat_kumpul }}</td>
-            </tr>
-            <tr>
-                <th>Batas Registrasi</th>
-                <td>{{ $data->batas_registrasi }}</td>
-            </tr>
-            <tr>
-                <th>Link</th>
-                <td>{{ $data->link }}</td>
+                <th>Penulis</th>
+                <td>{{ $data->penulis }}</td>
             </tr>
             <tr>
                 <th>Deskripsi</th>
@@ -43,7 +35,7 @@
             </tr>
             </table>
             <div class="mt-3">  
-                <a href="{{ route ('project.index') }}" class="btn btn-primary btn-md">Kembali</a>
+                <a href="{{ route ('berita.index') }}" class="btn btn-primary btn-md">Kembali</a>
             </div>
         </div>
     </div>
