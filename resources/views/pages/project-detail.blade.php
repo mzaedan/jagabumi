@@ -18,7 +18,7 @@
                 <div class="gallery">
                   <div class="xzoom-container">
                     <img
-                      src="{{ url('images/bersih-pantai.png') }}"
+                      src="{{ Storage::url($projectItem->foto) }}"
                       class="xzoom"
                       id="xzoom-default"
                       xoriginal="assets/image/bersih-pantai.png"
