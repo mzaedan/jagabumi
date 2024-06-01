@@ -1,11 +1,14 @@
 <?php
 
-use App\Http\Controllers\Admin\BeritaController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\ProjectController as ControllersProjectController;
+
+// import faat
+use App\Http\Controllers\ProjectController as ProjectControllerUser;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,12 +38,18 @@ Route::prefix('admin')
     ->middleware(['auth', 'admin'])
     ->group(function() {
         Route::resource('project', ProjectController::class);
-        Route::resource('berita', BeritaController::class);
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     });
-
-    
 
 // Route::get('/project/index', [App\Http\Controllers\Admin\ProjectController::class, 'index'])->name('project-index');
 // Route::get('/project/create', [App\Http\Controllers\Admin\ProjectController::class, 'create'])->name('project-create');
 
+
+
+// routes faat
+Route::prefix('user')
+    ->group(function () {
+        Route::get('/beranda', [BerandaController::class, 'index'])->name('user.beranda.index');
+        Route::get('/project', [ProjectControllerUser::class, 'index'])->name('user.project.index');
+        Route::get('/project/{id}', [ProjectControllerUser::class, 'show'])-> name('user.project.show');  
+    });

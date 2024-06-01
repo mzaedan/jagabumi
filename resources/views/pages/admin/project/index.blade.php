@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-  Project
+  Category
 @endsection
 
 @section('content')

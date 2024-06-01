@@ -3,16 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Project;
 
 class ProjectController extends Controller
 {
     public function index()
     {
-        return view('pages.project');
+        $projectItems = Project::all();
+        return view('pages.project', compact('projectItems'));
     }
 
-    public function detail()
+    public function show($id)
     {
-        return view('pages.project-detail');
+        $projectItem = Project::findOrFail($id);
+        return view('pages.project-detail', compact('projectItem'));
     }
 }

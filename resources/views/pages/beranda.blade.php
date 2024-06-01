@@ -57,22 +57,24 @@
           Gemilang
         </p>
         <div class="project-container">
+        @foreach($berandaItems->take(4) as $berandaItem)
           <div class="project-item">
             <a href="detail.html">
-              <img src="{{ url('images/tanam-mangrove.jpeg') }}" />
+              <img src="{{ Storage::url($berandaItem->foto) }}" />
               <div class="project-description">
-                <h3>Menanam Mangrove</h3>
+                <h3>{{ $berandaItem->nama_kegiatan }}</h3>
                 <div class="project-date">
                   <img src="{{ url('images/calender-icon.png') }}" alt="" />
-                  <p>10 Mei 2024</p>
+                  <p>{{ $berandaItem->tanggal_kegiatan }}</p>
                 </div>
                 <div class="project-location">
                  <img src="{{ url('images/location.png') }}" alt="" />
-                  <p>Pulau Harapan, Kepulauan Seribu</p>
+                  <p>{{ $berandaItem->lokasi_kegiatan }}</p>
                 </div>
               </div>
             </a>
           </div>
+        @endforeach
         </div>
         <a href="project.html" class="btn-hijau">Lihat lebih banyak</a>
       </article>
