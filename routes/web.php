@@ -49,9 +49,7 @@ Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout
 
 
 // routes faat
-Route::prefix('user')
-    ->group(function () {
-        Route::get('/beranda', [BerandaController::class, 'index'])->name('user.beranda.index');
-        Route::get('/project', [ProjectControllerUser::class, 'index'])->name('user.project.index');
-        Route::get('/project/{id}', [ProjectControllerUser::class, 'show'])-> name('user.project.show');  
-    });
+
+Route::get('/beranda', [BerandaController::class, 'index'])->name('user.beranda.index');
+Route::get('/project', [ProjectControllerUser::class, 'index'])->name('user.project.index');
+Route::get('/project/{id}', [ProjectControllerUser::class, 'show'])-> name('user.project.show');
