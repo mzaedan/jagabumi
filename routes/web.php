@@ -44,6 +44,8 @@ Route::prefix('admin')
 // Route::get('/project/index', [App\Http\Controllers\Admin\ProjectController::class, 'index'])->name('project-index');
 // Route::get('/project/create', [App\Http\Controllers\Admin\ProjectController::class, 'create'])->name('project-create');
 
+//Baru Test
+Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
 
 
 // routes faat
