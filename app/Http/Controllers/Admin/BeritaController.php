@@ -3,21 +3,21 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ProjectRequest;
-use App\Models\Project;
+use App\Http\Requests\BeritaRequest;
+use App\Models\Berita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class ProjectController extends Controller
+class BeritaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $items = Project::all();
+        $items = Berita::all();
 
-        return view('pages.admin.project.index', [
+        return view('pages.admin.berita.index', [
             'items' => $items
         ]);
     }
@@ -27,24 +27,23 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.project.create');
+        return view('pages.admin.berita.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ProjectRequest $request)
+    public function store(BeritaRequest $request)
     {
         $data = $request->all();
-        $data['slug'] = Str::slug($request->nama_kegiatan);
+        $data['slug'] = Str::slug($request->judul_berita);
 
         if ($request->file('foto') !== null) {
-            $data['foto'] = $request->file('foto')->store('assets/project', 'public');
+            $data['foto'] = $request->file('foto')->store('assets/berita', 'public');
         }
 
-        Project::create($data);
-
-        return redirect()->route('project.index');
+        Berita::create($data);
+        return redirect()->route('berita.index');
     }
 
     /**
@@ -52,9 +51,9 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        $data = Project::findOrFail($id);
+        $data = Berita::findOrFail($id);
 
-        return view('pages.admin.project.view',[
+        return view('pages.admin.berita.view',[
             'data' => $data
         ]);
     }
@@ -64,9 +63,9 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        $item = Project::findOrFail($id);
+        $item = Berita::findOrFail($id);
 
-        return view('pages.admin.project.edit',[
+        return view('pages.admin.berita.edit',[
             'item' => $item
         ]);
     }
@@ -74,19 +73,19 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(ProjectRequest $request, $id)
+    public function update(BeritaRequest $request, $id)
     {
         $data = $request->all();
-        $data['slug'] = Str::slug($request->nama_kegiatan);
-        
-       if ($request->file('foto') !== null) {
-            $data['foto'] = $request->file('foto')->store('assets/project', 'public');
+        $data['slug'] = Str::slug($request->judul_berita);
+
+        if ($request->file('foto') !== null) {
+            $data['foto'] = $request->file('foto')->store('assets/berita', 'public');
         }
 
-        $item = Project::findOrFail($id);
+        $item = Berita::findOrFail($id);
         $item->update($data);
 
-        return redirect()->route('project.index');
+        return redirect()->route('berita.index');
     }
 
     /**
@@ -94,9 +93,9 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        $item = Project::findOrFail($id);
+        $item = Berita::findOrFail($id);
         $item->delete();
 
-        return redirect()->route('project.index');
+        return redirect()->route('berita.index');
     }
 }

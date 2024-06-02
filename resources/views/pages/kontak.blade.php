@@ -38,12 +38,23 @@
                 </div>
             </div>
 
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <div class="contact-col">
-                <form action="">
-                    <input type="text" placeholder="Enter your name" required />
-                    <input type="email" placeholder="Enter your email" required />
-                    <input type="text" placeholder="Enter your subject" required />
-                    <textarea rows="8" placeholder="Massage" required></textarea>
+                <form action="{{ route('kontak.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <input type="text" name="nama" placeholder="Masukan Nama Anda" required />
+                    <input type="email" name="email" placeholder="Masukan Email Anda" required />
+                    <input type="text" name="subject" placeholder="Masukan Subject" />
+                    <textarea type="text" rows="8" placeholder="Pesan..." name="message" required></textarea>
                     <button type="submit" class="hero-btn">Kirim</button>
                 </form>
             </div>

@@ -35,5 +35,40 @@
           </li>
         </ul>
     </nav>
-    <!-- /.sidebar-menu -->
+    <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+              <a href={{ route('berita.index') }} class="nav-link">
+                  <i class="nav-icon fas fa-newspaper"></i>
+                    <p>
+                        Berita
+                    </p>
+              </a>
+          </li>
+        </ul>
+    </nav>
+    <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+              <a href={{ route('kontak.index') }} class="nav-link">
+                  <i class="nav-icon fas fa-envelope-square"></i>
+                    <p>
+                        Pesan
+                    </p>
+              </a>
+          </li>
+        </ul>
+    </nav>
+    <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+              <a href={{ route('logout') }} class="nav-link">
+                  <i class="nav-icon  fas fa-sign-out-alt"></i>
+                    <p>
+                        Logout
+                    </p>
+              </a>
+          </li>
+        </ul>
+    </nav>
 </div>

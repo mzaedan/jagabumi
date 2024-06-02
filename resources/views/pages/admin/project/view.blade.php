@@ -7,7 +7,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Detail Paket Travel</h1>
+        <h1 class="h3 mb-0 text-gray-800">Detail Project</h1>
     </div>
 
     <div class="card shadow">
@@ -19,11 +19,11 @@
             </tr>
             <tr>
                 <th>Tanggal Kegiatan</th>
-                <td>{{ $data->tanggal_kegiatan }}</td>
+                <td>{{ $data->tanggal }}</td>
             </tr>
             <tr>
                 <th>Lokasi Kegiatan</th>
-                <td>{{ $data->lokasi_kegiatan }}</td>
+                <td>{{ $data->lokasi }}</td>
             </tr>
             <tr>
                 <th>Tempat Kumpul</th>
@@ -36,6 +36,25 @@
             <tr>
                 <th>Link</th>
                 <td>{{ $data->link }}</td>
+            </tr>
+            <tr>
+                <th>Foto</th>
+                <td>
+                    @if ($data->foto === null)
+                        <span class="text-danger"><i class="fa fa-times"></i> <i>Tidak ada file yang diupload</i></span>
+                    @else
+                    <a href="{{ url('storage/'.$data->foto) }}">
+                        <img class="img-fluid" width="180" src="{{ asset('storage/'.$data->foto)}}" alt="foto.jpg" />
+                        <br>
+                        <br>
+                        <i class="fa fa-download"></i> &nbsp;Download Foto
+                    </a>
+                    @endif
+                </td>
+            </tr>
+            <tr>
+                <th>Status Project</th>
+                <td>{{ $data->status_project }}</td>
             </tr>
             <tr>
                 <th>Deskripsi</th>

@@ -17,10 +17,10 @@
         <div class="dashboard-content">
             <div class="row">
                 <div class="col-md-12">
-                    @if ($errors->any())
+                    @if (count($errors) > 0)
                         <div class="alert alert-danger">
                             <ul>
-                                @foreach ($errors->all as $error)
+                                @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
                                 @endforeach
                             </ul>
@@ -41,13 +41,13 @@
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <label>Tanggal Kegiatan</label>
-                                            <input type="date" name="tanggal_kegiatan" class="form-control" required value="{{ $item->tanggal_kegiatan }}">
+                                            <input type="date" name="tanggal" class="form-control" required value="{{ $item->tanggal }}">
                                         </div>
                                     </div>
                                      <div class="col-md-8">
                                         <div class="form-group">
                                             <label>Lokasi Kegiatan</label>
-                                            <input type="text" name="lokasi_kegiatan" class="form-control" required value="{{ $item->lokasi_kegiatan }}">
+                                            <input type="text" name="lokasi" class="form-control" required value="{{ $item->lokasi }}">
                                         </div>
                                     </div>
                                     <div class="col-md-8">
@@ -70,10 +70,27 @@
                                     </div>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label>Foto</label>
-                                            <input type="file" name="foto" class="form-control">
-                                            <img src="{{ Storage::url($item->foto) }}" alt="Current File" style="width: 150px" class="img-thumbnail">
-                                            <button type="button" class="btn btn-danger" onclick="removeFile()">Remove File</button>
+                                            <div class="mb-3">
+                                                <label>Foto <small style="color:green">(pdf) * opsional</small></label> <br/>
+                                                @if ($item->foto === null)
+                                                    <span class="text-danger"><i class="fa fa-times"></i> <i>Tidak ada file yang diupload</i></span>
+                                                @else
+                                                    <img class="img-fluid" width="150" src="{{ asset('storage/'.$item->foto)}}" alt="foto.jpg" />
+                                                @endif
+                                            </div>
+                                            <input type="file" accept="image/*" name="foto" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label>Status Kegiatan</label>
+                                            <select name="status_project" class="form-select" required>
+                                                <option value="{{ $item->status_project }}">
+                                                    {{ $item->status_project }}
+                                                </option>
+                                                <option value="Aktif">Aktif</option>
+                                                <option value="Tidak Aktif">Tidak Aktif</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
