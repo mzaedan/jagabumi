@@ -26,7 +26,7 @@
                   </div>
                 </div>
                 <h2>Tentang Kegiatan</h2>
-                <p>{{ $projectItem->deskripsi }}</p>
+                <p>{!! $projectItem->deskripsi !!}</p>
               </div>
             </div>
             <div class="col-lg-4">

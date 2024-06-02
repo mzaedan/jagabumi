@@ -17,7 +17,7 @@
                 <h5 class="berita-loc"><i class="fa-solid fa-location-dot"></i> {{ $beritaItem->lokasi }} - <span>{{ $beritaItem->penulis }}</span></h5>
                 
                 <habitant class="berita-quote">
-                    <p>{{ $beritaItem->deskripsi }}</p>
+                    <p>{!! $beritaItem->deskripsi !!}</p>
                 <br>
             </div>
         </div>
