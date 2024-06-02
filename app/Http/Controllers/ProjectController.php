@@ -13,9 +13,9 @@ class ProjectController extends Controller
         return view('pages.project', compact('projectItems'));
     }
 
-    public function show($id)
+    public function show($slug)
     {
-        $projectItem = Project::findOrFail($id);
+        $projectItem = Project::where('slug', $slug)->firstOrfail();
         return view('pages.project-detail', compact('projectItem'));
     }
 }

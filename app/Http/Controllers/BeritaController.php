@@ -3,16 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Berita;
 
 class BeritaController extends Controller
 {
     public function index()
     {
-        return view('pages.berita');
+        $beritaItems = Berita::all();
+        return view('pages.berita', compact('beritaItems'));
     }
 
-    public function detail()
+    public function show($slug)
     {
-        return view('pages.berita-detail');
+        $beritaItem = Berita::where('slug', $slug)->firstOrfail();
+        return view('pages.berita-detail', compact('beritaItem'));
     }
 }

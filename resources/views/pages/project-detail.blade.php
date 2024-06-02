@@ -14,7 +14,7 @@
             <div class="col-lg-8 pl-lg-0">
               <div class="card card-details">
                 <h1>{{ $projectItem->nama_kegiatan }}</h1>
-                <p>{{ $projectItem->lokasi_kegiatan }}</p>
+                <p>{{ $projectItem->lokasi }}</p>
                 <div class="gallery">
                   <div class="xzoom-container">
                     <img
@@ -37,7 +37,7 @@
                 <table class="trip-information">
                   <tr>
                     <th width="50%">Tanggal Kegiatan</th>
-                    <td width="50%" class="text-right">{{ $projectItem->tanggal_kegiatan }}</td>
+                    <td width="50%" class="text-right">{{ $projectItem->tanggal }}</td>
                   </tr>
                   <tr>
                     <th width="50%">Tempat Kumpul</th>

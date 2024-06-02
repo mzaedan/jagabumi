@@ -27,10 +27,15 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\BerandaController::class, 'index'])->name('beranda');
 Route::get('/beranda', [BerandaController::class, 'index'])->name('user.beranda.index');
+Route::get('/beranda/{slug}', [ProjectControllerUser::class, 'show'])-> name('user.beranda.show');
+
 Route::get('/project', [ProjectControllerUser::class, 'index'])->name('user.project.index');
-Route::get('/project/{id}', [ProjectControllerUser::class, 'show'])-> name('user.project.show');
-Route::get('/berita', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita');
-Route::get('/berita/detail', [App\Http\Controllers\BeritaController::class, 'detail'])->name('berita-detail');
+Route::get('/project/{slug}', [ProjectControllerUser::class, 'show'])-> name('user.project.show');
+
+Route::get('/berita', [App\Http\Controllers\BeritaController::class, 'index'])->name('user.berita.index');
+Route::get('/berita/{slug}', [App\Http\Controllers\BeritaController::class, 'show'])->name('user.berita.show');
+
+
 Route::get('/kontak', [App\Http\Controllers\KontakController::class, 'index'])->name('kontak');
 Route::post('/kontak/store', [App\Http\Controllers\KontakController::class, 'store'])->name('kontak.store');
 

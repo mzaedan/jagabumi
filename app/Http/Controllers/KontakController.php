@@ -18,6 +18,6 @@ class KontakController extends Controller
     {
         $data = $request->all();
         Kontak::create($data);
-        return redirect()->route('kontak');
+        return redirect()->route('kontak')->with('success', 'Pesan Berhasil Dikirim!');
     }
 }

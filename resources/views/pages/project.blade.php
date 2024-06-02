@@ -19,21 +19,23 @@
 
         
         <div class="project-container">
-          @foreach($projectItems as $projectItem)
+          @foreach($projectItems->filter(function ($item) {
+          return $item->status_project == 'Aktif';
+          }) as $projectItem)
           <div class="project-item">
             <a href="detail.html">
               <img src="{{ Storage::url($projectItem->foto) }}" />
               <div class="project-description">
-                <a href="{{ route('user.project.show', ['id' => $projectItem->id]) }}">
+                <a href="{{ url('/project/' . $projectItem->slug) }}">
                   <h3>{{ $projectItem->nama_kegiatan }}</h3>
                 </a>
                 <div class="project-date">
-                  <img src="assets/image/calender-icon.png" alt="" />
-                  <p>{{ $projectItem->tanggal_kegiatan }}</p>
+                  <img src="{{ url('images/calender-icon.png') }}" alt="" />
+                  <p>{{ $projectItem->tanggal }}</p>
                 </div>
                 <div class="project-location">
-                  <img src="assets/image/location.png" alt="" />
-                  <p>{{ $projectItem->lokasi_kegiatan }}</p>
+                  <img src="{{ url('images/location.png') }}" alt="" />
+                  <p>{{ $projectItem->lokasi }}</p>
                 </div>
               </div>
             </a>

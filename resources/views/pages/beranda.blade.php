@@ -57,26 +57,28 @@
           Gemilang
         </p>
         <div class="project-container">
-        @foreach($berandaItems->take(4) as $berandaItem)
+        @foreach($berandaItems->filter(function ($item) {
+          return $item->status_project == 'Aktif';
+        })->take(4) as $berandaItem)
           <div class="project-item">
-            <a href="detail.html">
+            <a href="{{ url('/beranda/' . $berandaItem->slug) }}">
               <img src="{{ Storage::url($berandaItem->foto) }}" />
               <div class="project-description">
                 <h3>{{ $berandaItem->nama_kegiatan }}</h3>
                 <div class="project-date">
                   <img src="{{ url('images/calender-icon.png') }}" alt="" />
-                  <p>{{ $berandaItem->tanggal_kegiatan }}</p>
+                  <p>{{ $berandaItem->tanggal }}</p>
                 </div>
                 <div class="project-location">
                  <img src="{{ url('images/location.png') }}" alt="" />
-                  <p>{{ $berandaItem->lokasi_kegiatan }}</p>
+                  <p>{{ $berandaItem->lokasi }}</p>
                 </div>
               </div>
             </a>
           </div>
         @endforeach
         </div>
-        <a href="project.html" class="btn-hijau">Lihat lebih banyak</a>
+        <a href="{{ route('user.project.index') }}" class="btn-hijau">Lihat lebih banyak</a>
       </article>
     </main>
 @endsection

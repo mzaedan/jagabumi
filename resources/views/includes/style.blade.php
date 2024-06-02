@@ -13,3 +13,4 @@
     crossorigin="anonymous"
 />
 <link href="{{ url('style/main.css')}}" rel="stylesheet" />
+<link rel="stylesheet" href="{{ asset('sweetalert2/sweetalert2.min.css') }}">

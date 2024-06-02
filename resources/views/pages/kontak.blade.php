@@ -55,7 +55,8 @@
                     <input type="email" name="email" placeholder="Masukan Email Anda" required />
                     <input type="text" name="subject" placeholder="Masukan Subject" />
                     <textarea type="text" rows="8" placeholder="Pesan..." name="message" required></textarea>
-                    <button type="submit" class="hero-btn">Kirim</button>
+                    <button type="submit" class="hero-btn" @click="showAlert">Kirim</button>
+                    
                 </form>
             </div>
         </div>
@@ -74,7 +75,19 @@
       </section>
     </main>
 
-
+    <script src="{{ asset('sweetalert2/sweetalert2.all.min.js') }}"></script>
+    @if(session('success'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                title: 'Berhasil!',
+                text: "{{ session('success') }}",
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+        });
+    </script>
+    @endif
 
 @endsection
 
