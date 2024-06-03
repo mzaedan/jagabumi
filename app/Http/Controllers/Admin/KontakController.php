@@ -16,4 +16,12 @@ class KontakController extends Controller
             'items' => $items
         ]);
     }
+
+     public function destroy($id)
+    {
+        $item = Kontak::findOrFail($id);
+        $item->delete();
+
+        return redirect()->route('kontak.index');
+    }
 }

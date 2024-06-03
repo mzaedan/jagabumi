@@ -50,6 +50,7 @@ Route::prefix('admin')
         Route::resource('berita', BeritaController::class);
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::get('/kontak', [KontakController::class, 'index'])->name('kontak.index');
+        Route::delete('/kontak/{id}/destroy', [KontakController::class, 'destroy'])->name('kontak.destroy');
     });
 
 

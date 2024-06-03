@@ -35,7 +35,7 @@
                             @forelse($items as $item)
                             <tr>
                                 <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                <td style="text-align: center;">{{ $item->nama_kegiatan }}</td>
+                                <td style="text-align: left;">{{ $item->nama_kegiatan }}</td>
                                 <td style="text-align: center;">{{ $item->tanggal}}</td>
                                 <td style="text-align: center;">{{ $item->status_project}}</td>
                                 <td style="text-align: center;"><img src="{{ Storage::url($item->foto) }}" style="width: 150px" class="img-thumbnail" /></td>

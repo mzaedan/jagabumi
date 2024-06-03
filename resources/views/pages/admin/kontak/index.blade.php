@@ -32,15 +32,12 @@
                             @forelse($items as $item)
                             <tr>
                                 <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                <td style="text-align: center;">{{ $item->nama }}</td>
-                                <td style="text-align: center;">{{ $item->email }}</td>
-                                <td style="text-align: center;">{{ $item->subject }}</td>
+                                <td style="text-align: left;">{{ $item->nama }}</td>
+                                <td style="text-align: left;">{{ $item->email }}</td>
+                                <td style="text-align: left;">{{ $item->subject }}</td>
                                 <td style="text-align: left;">{{ $item->message }}</td>
                                 <td style="text-align:center; width:100px">
-                                    <a href="{{ route('berita.show', $item->id) }}" class="btn btn-primary">
-                                        <i class="fa fa-eye"></i>
-                                    </a>
-                                    <form action="{{ route('berita.destroy', $item->id) }}" method="POST" class="d-inline">
+                                    <form action="{{ route('kontak.destroy', $item->id) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-danger" onclick="return confirm('Are You Sure, You Want To Delete This Data?')">
