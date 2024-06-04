@@ -900,11 +900,11 @@ a.tbl-hijau:hover {
         text-align: left;
     }
 
-    .nav-header .nav-item:last-child a {
+    /* .nav-header .nav-item:last-child a {
         display: block;
         margin-bottom: 10px;
         text-align: center;
-    }
+    } */
 
     .active > a,
     .nav-header .nav-item a:hover {
