@@ -13,9 +13,10 @@ class ProjectController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $items = Project::all();
+        $itemsPerPage = 5;
+        $items = Project::paginate($itemsPerPage);
 
         return view('pages.admin.project.index', [
             'items' => $items

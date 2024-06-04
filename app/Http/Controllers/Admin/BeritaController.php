@@ -15,7 +15,8 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        $items = Berita::all();
+        $itemsPerPage = 5;
+        $items = Berita::paginate($itemsPerPage);
 
         return view('pages.admin.berita.index', [
             'items' => $items

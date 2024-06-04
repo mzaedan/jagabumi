@@ -10,7 +10,8 @@ class KontakController extends Controller
 {
     public function index()
     {
-        $items = Kontak::all();
+        $itemsPerPage = 5;
+        $items = Kontak::paginate($itemsPerPage);
 
         return view('pages.admin.kontak.index', [
             'items' => $items

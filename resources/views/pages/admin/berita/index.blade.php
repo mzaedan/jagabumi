@@ -35,7 +35,7 @@
                         <tbody>
                             @forelse($items as $item)
                             <tr>
-                                <td style="text-align: center;">{{ $loop->iteration }}</td>
+                                <td style="text-align: center;">{{ ($items->currentPage()-1) * $items->perPage() + $loop->iteration }}</td>
                                 <td style="text-align: left;">{{ $item->judul_berita }}</td>
                                 <td style="text-align: center;">{{ $item->lokasi }}</td>
                                 <td style="text-align: center;">{{ $item->tanggal }}</td>
@@ -67,6 +67,8 @@
                         </tbody>
                     </table>
                 </div>
+                <br><br>
+                {{ $items->links() }}
             </div>
         </div>
     </div>

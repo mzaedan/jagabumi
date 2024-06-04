@@ -8,7 +8,6 @@
 
 <div class="container-fluid">
 
-    <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Project</h1>
     </div>
@@ -34,7 +33,7 @@
                         <tbody>
                             @forelse($items as $item)
                             <tr>
-                                <td style="text-align: center;">{{ $loop->iteration }}</td>
+                                <td style="text-align: center;">{{ ($items->currentPage()-1) * $items->perPage() + $loop->iteration }}</td>
                                 <td style="text-align: left;">{{ $item->nama_kegiatan }}</td>
                                 <td style="text-align: center;">{{ $item->tanggal}}</td>
                                 <td style="text-align: center;">{{ $item->status_project}}</td>
@@ -65,9 +64,19 @@
                         </tbody>
                     </table>
                 </div>
+                <br><br>
+                {{ $items->links() }}
             </div>
         </div>
     </div>
+
+    <style>
+        .pagination {
+            margin-top: 50px;
+            justify-content: center;
+        }
+    </style>
+
 </div>
 
 @endsection
@@ -75,4 +84,3 @@
 @push('addon-script')
 
 @endpush
-
