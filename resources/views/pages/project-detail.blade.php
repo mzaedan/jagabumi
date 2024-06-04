@@ -53,6 +53,7 @@
                 <a
                   href="{{ $projectItem->link }}"
                   class="btn btn-block btn-join-now mt-3 py-2"
+                  target="_blank"
                 >
                   Gabung Sekarang
                 </a>
