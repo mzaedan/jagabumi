@@ -214,24 +214,30 @@ nav > .nav-header {
 
 .project-container {
     display: flex;
+    align-items: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: space-between;
     padding: 10px 0px;
-    margin-bottom: 0px;
+    margin-bottom: 40px;
 }
 
 .project-item {
     box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 80px;
-    flex-basis: calc(25% - 30px); /* 25% minus margins */
+    margin: 15px;
+    flex-basis: 25%;
     border-radius: 5px;
     transition: margin-top 1s;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 450px;
 }
 
 .project-item > a {
     text-decoration: none;
     color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-item:hover {
@@ -246,9 +252,12 @@ nav > .nav-header {
 }
 
 .project-description {
-    margin-bottom: 30px;
+    flex-grow: 1;
     padding: 10px 20px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .project-description a {
@@ -263,6 +272,7 @@ nav > .nav-header {
 .project-location, .project-date {
     display: flex;
     align-items: center;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
@@ -772,8 +782,8 @@ a.tbl-hijau:hover {
 }
 
 .berita-quote {
-    font-size: 22px;
-    color: #555555;
+    font-size: 18px;
+    color: black;
     text-align: justify;
 }
 
