@@ -1,70 +1,68 @@
 @extends('layouts.admin')
 
-@section('title')
-  Kontak Pesan
+@section('header-name')
+  Kontak
 @endsection
 
 @section('content')
 
-<div class="container-fluid">
-
-    <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Kontak Pesan</h1>
-    </div>
-    
-    <div class="card">
-        <div class="row">
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="tabel table-bordered" width="100%" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th style="text-align: center;">No</th>
-                                <th style="text-align: center;">Nama</th>
-                                <th style="text-align: center;">email</th>
-                                <th style="text-align: center;">subject</th>
-                                <th style="text-align: center;">massage</th>
-                                <th style="text-align: center;">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @forelse($items as $item)
-                            <tr>
-                                <td style="text-align: center;">{{ ($items->currentPage()-1) * $items->perPage() + $loop->iteration }}</td>
-                                <td style="text-align: left;">{{ $item->nama }}</td>
-                                <td style="text-align: left;">{{ $item->email }}</td>
-                                <td style="text-align: left;">{{ $item->subject }}</td>
-                                <td style="text-align: left;">{{ $item->message }}</td>
-                                <td style="text-align:center; width:100px">
-                                    <form action="{{ route('kontak.destroy', $item->id) }}" method="POST" class="d-inline">
-                                        @csrf
-                                        @method('delete')
-                                        <button class="btn btn-danger" onclick="return confirm('Are You Sure, You Want To Delete This Data?')">
-                                            <i class="fa fa-trash"></i>
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                            @empty
-                            <tr>
-                                <td colspan="7" class="text-center">
-                                    Data Kosong
-                                </td>
-                            </tr>
-                            @endforelse
-                        </tbody>
-                    </table>
+<div class="section">
+    <div class="container-fluid">
+        <div class="dashboard-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-resposive">
+                                <table class="table table-hover scroll-horizontal-vertical w-100" id="crudTable">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama</th>
+                                            <th>Email</th>
+                                            <th>Subject</th>
+                                            <th>Message</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                    
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <br><br>
-                {{ $items->links() }}
             </div>
         </div>
     </div>
 </div>
-
 @endsection
 
 @push('addon-script')
-
+    <script>
+        var datatable = $('#crudTable').DataTable({
+            processing: true,
+            serverSide: true,
+            ordering: true,
+            ajax: {
+                url: '{!! url()->current() !!}',
+            },
+            columns: [
+                { data : 'no', name: 'no', className: 'text-center' },
+                { data : 'nama', name: 'nama', className: 'text-left'},
+                { data : 'email', name: 'email', className: 'text-center'},
+                { data : 'subject', name: 'subject', className: 'text-center'},
+                { data : 'message', name: 'message', className: 'text-left'},
+                {
+                    data : 'action',
+                    name : 'action',
+                    orderable : false,
+                    searcable : false,
+                    width: '15%',
+                    className: 'text-center'
+                },
+            ]
+        })
+    </script>
 @endpush

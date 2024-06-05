@@ -7,6 +7,7 @@ use App\Http\Requests\BeritaRequest;
 use App\Models\Berita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Yajra\DataTables\DataTables;
 
 class BeritaController extends Controller
 {
@@ -15,12 +16,49 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        $itemsPerPage = 5;
-        $items = Berita::paginate($itemsPerPage);
+        if(request()->ajax())
+        {
+            $query = Berita::query();
 
-        return view('pages.admin.berita.index', [
-            'items' => $items
-        ]);
+            return DataTables::of($query)
+                ->addColumn('action', function($item) {
+                    return '
+                        <div class="btn-group">
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle mr-1 mb-1" type="button" data-toggle="dropdown">
+                                    Aksi
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="' . route('berita.show', $item->id). '">
+                                        Detail
+                                    </a>
+                                    <a class="dropdown-item" href="' . route('berita.edit', $item->id). '">
+                                        Sunting
+                                    </a>
+                                    <form action="'. route('berita.destroy', $item->id) .'" method="POST" onsubmit="return confirm(\'Apakah Anda Ingin Menghapus Data Ini?\')">
+                                        '. method_field('delete') . csrf_field() . '
+                                        <button type="submit" class="dropdown-item text-danger">
+                                            Hapus
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    ';
+                })
+                ->editColumn('foto', function ($item) {
+                    return $item->foto ? '<img src="' . asset('storage/'.$item->foto) . '" style="max-height: 80px;"/>' : '';
+                })
+                ->addColumn('no', function($item) {
+                    static $count = 1;
+                    return $count++;
+                })
+               
+                ->rawColumns(['action', 'no', 'foto',])
+                ->make();
+
+        }
+        return view('pages.admin.berita.index');
     }
 
     /**
