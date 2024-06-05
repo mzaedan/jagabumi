@@ -225,17 +225,18 @@ nav > .nav-header {
     margin-bottom: 80px;
     flex-basis: calc(25% - 30px); /* 25% minus margins */
     border-radius: 5px;
+    transition: margin-top 1s;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .project-item > a {
     text-decoration: none;
     color: black;
 }
-
-/* .project-item:hover {
-    margin-top: -40px;
-} */
 
 .project-item > a > img {
     width: 100%;
@@ -248,6 +249,10 @@ nav > .nav-header {
     margin-bottom: 30px;
     padding: 10px 20px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
 }
 
 .project-description a {
@@ -265,8 +270,15 @@ nav > .nav-header {
     margin-bottom: 10px;
 }
 
+.project-date img, .project-location img {
+    width: 20px; /* Atur ukuran icon jika perlu */
+    height: 20px;
+    margin-right: 5px; /* Spasi antara ikon dan teks */
+}
+
 .project-location > p,
 .project-date > p {
+    margin: 0;
     margin-left: 5px;
     color: #606060;
     font-size: 14px;
@@ -275,28 +287,20 @@ nav > .nav-header {
 
 /* Media Queries */
 @media (max-width: 1024px) {
-
-
     .project-item {
         flex-basis: calc(33.333% - 30px); /* 33.333% for smaller screens */
     }
 }
 
 @media (max-width: 768px) {
-
-
     .project-item {
         flex-basis: calc(50% - 30px); /* 50% for even smaller screens */
     }
 }
 
 @media (max-width: 480px) {
-
-
     .project-item {
-        flex-basis: 100%;
-        display: flex;
-        align-items: center;
+        flex-basis: calc(100% - 30px); /* 100% for mobile screens */
     }
 }
 
@@ -883,16 +887,6 @@ a.tbl-hijau:hover {
     background-image: url("../image/twitter.svg");
 }
 
-@media (max-width: 1300px) {
-    #jumbotron-illustration > img {
-        width: 80%;
-        height: auto;
-        margin-top: 90px;
-        /* margin-right: 120px; */
-        margin-left: 130px;
-    }
-}
-
 @media (max-width: 1100px) {
     .nav-header {
         padding: 10px 70px;
@@ -918,11 +912,11 @@ a.tbl-hijau:hover {
         text-align: left;
     }
 
-    /* .nav-header .nav-item:last-child a {
+    .nav-header .nav-item:last-child a {
         display: block;
         margin-bottom: 10px;
         text-align: center;
-    } */
+    }
 
     .active > a,
     .nav-header .nav-item a:hover {
@@ -939,15 +933,14 @@ a.tbl-hijau:hover {
     }
 
     #jumbotron-text > h1 {
-        /* background-color: #5bbe82; */
-        font-size: 2rem;
+        background-color: #5bbe82;
+        font-size: 1px;
     }
 
     #jumbotron-illustration > img {
-        width: 80%;
-        height: auto;
+        width: 100%;
         margin-top: 90px;
-        /* margin-right: 120px; */
+        margin-right: 120px;
         margin-left: 130px;
     }
 
@@ -967,6 +960,9 @@ a.tbl-hijau:hover {
         text-align: center;
     }
 
+    .product-container {
+        flex-direction: column;
+    }
 
     .product-item {
         transition: none;
@@ -974,15 +970,6 @@ a.tbl-hijau:hover {
 
     .product-item:hover {
         margin-top: 15px !important;
-    }
-
-    .row {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .row .contact-col form input{
-        width: 100%;
     }
 
     .footer-content {
@@ -1024,22 +1011,12 @@ a.tbl-hijau:hover {
     }
 
     #jumbotron-illustration > img {
-        width: 60%;
+        width: 200px;
         margin-bottom: 20px;
-        margin-left: 0;
     }
 
     .table-responsive {
         overflow: scroll;
-    }
-
-    .row {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .row .contact-col form input{
-        width: 100%;
     }
 }
 
@@ -1061,10 +1038,7 @@ a.tbl-hijau:hover {
     }
 
     .project-item {
-        flex-basis: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-basis: 60%;
     }
 
     .cerita-siswa-img {
@@ -1091,43 +1065,16 @@ a.tbl-hijau:hover {
         width: 24px;
         height: 24px;
     }
-
-    .row {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .contact-col form input{
-        width: 100%;
-    }
 }
 
 @media screen and (max-width: 375px) {
     #jumbotron {
         margin-top: 100px;
     }
-
-    .row {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .contact-col form input {
-        width: 100%;
-    }
 }
 
 @media screen and (max-width: 350px) {
     #jumbotron {
         margin-top: 220px;
-    }
-
-    .row {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .row .contact-col form input{
-        width: 100%;
     }
 }
