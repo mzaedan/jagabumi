@@ -25,7 +25,7 @@
                     >{{ $beritaItem->judul_berita }}</a
                     >
                     <p>
-                    {{ $beritaItem->deskripsi }}
+                    {{ strip_tags($beritaItem->deskripsi) }}
                     </p>
                     <a href="{{ url('/berita/' . $beritaItem->slug) }}">Baca selengkapnya</a>
                 </div>
