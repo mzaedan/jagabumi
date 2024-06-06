@@ -274,12 +274,12 @@ nav > .nav-header {
     margin-bottom: 10px;
 }
 
-.project-date img, .project-location img {
-    width: 20px; 
+.project-date img,
+.project-location img {
+    width: 20px;
     height: 20px;
-    margin-right: 5px; 
+    margin-right: 5px;
 }
-
 
 .project-location > p,
 .project-date > p {
@@ -716,8 +716,7 @@ a.tbl-hijau:hover {
     display: block;
 }
 .section-details-content .gallery .xzoom-container .xzoom {
-    width: 750px;
-    height: 400px;
+    width: 100%;
     box-shadow: none;
     margin-bottom: 10px;
 }
@@ -930,6 +929,7 @@ a.tbl-hijau:hover {
         display: block;
         padding: 10px;
         margin-top: 40px;
+        margin-left: 3px;
         text-align: left;
     }
 
@@ -996,6 +996,10 @@ a.tbl-hijau:hover {
     .footer-content {
         text-align: right;
         flex-direction: column;
+    }
+
+    footer {
+        margin-top: 50px;
     }
 
     .footer-menu {
