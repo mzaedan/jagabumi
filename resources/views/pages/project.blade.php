@@ -23,12 +23,10 @@
           return $item->status_project == 'Aktif';
           }) as $projectItem)
           <div class="project-item">
-            <a href="detail.html">
+            <a href="{{ url('/project/' . $projectItem->slug) }}">
               <img src="{{ Storage::url($projectItem->foto) }}" />
               <div class="project-description">
-                <a href="{{ url('/project/' . $projectItem->slug) }}">
                   <h3>{{ $projectItem->nama_kegiatan }}</h3>
-                </a>
                 <div class="project-date">
                   <img src="{{ url('images/calender-icon.png') }}" alt="" />
                   <p>{{ $projectItem->tanggal }}</p>
