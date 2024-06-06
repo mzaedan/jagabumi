@@ -12,7 +12,6 @@
         </a>
       </div>
       <ul class="nav-header">
-        <!-- <li class="nav-item active"><a href="{{ route('beranda') }}">Beranda</a></li> -->
         <li class="nav-item {{ request()->routeIs('user.beranda.index') ? 'active' : '' }}"><a href="{{ route('user.beranda.index') }}">Beranda</a></li>
         <li class="nav-item {{ request()->routeIs('user.project.index') ? 'active' : '' }}"><a href="{{ route('user.project.index') }}">Project</a></li>
         <li class="nav-item {{ request()->routeIs('user.berita.index') ? 'active' : '' }}"><a href="{{ route('user.berita.index') }}">Berita</a></li>
