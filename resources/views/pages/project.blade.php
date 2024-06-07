@@ -26,14 +26,14 @@
             <a href="{{ url('/project/' . $projectItem->slug) }}">
               <img src="{{ Storage::url($projectItem->foto) }}" />
               <div class="project-description">
-                  <h3>{{ $projectItem->nama_kegiatan }}</h3>
+                  <h3 style="margin-bottom: 20px;">{{ $projectItem->nama_kegiatan }}</h3>
                 <div class="project-date">
-                  <img src="{{ url('images/calender-icon.png') }}" alt="" />
-                  <p>{{ $projectItem->tanggal }}</p>
+                  <img style="margin-bottom: 20px;" src="{{ url('images/calender-icon.png') }}" alt="" />
+                  <p style="margin-bottom: 20px;">{{ $projectItem->tanggal }}</p>
                 </div>
                 <div class="project-location">
-                  <img src="{{ url('images/location.png') }}" alt="" />
-                  <p>{{ $projectItem->lokasi }}</p>
+                  <img style="margin-bottom: 20px;" src="{{ url('images/location.png') }}" alt="" />
+                  <p style="margin-bottom: 20px;">{{ $projectItem->lokasi }}</p>
                 </div>
               </div>
             </a>

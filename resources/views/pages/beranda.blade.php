@@ -64,14 +64,14 @@
             <a href="{{ url('/beranda/' . $berandaItem->slug) }}">
               <img src="{{ Storage::url($berandaItem->foto) }}" />
               <div class="project-description">
-                <h3>{{ $berandaItem->nama_kegiatan }}</h3>
+                <h3 style="margin-bottom: 20px;">{{ $berandaItem->nama_kegiatan }}</h3>
                 <div class="project-date">
-                  <img src="{{ url('images/calender-icon.png') }}" alt="" />
-                  <p>{{ $berandaItem->tanggal }}</p>
+                  <img style="margin-bottom: 20px;" src="{{ url('images/calender-icon.png') }}" alt="" />
+                  <p style="margin-bottom: 20px;">{{ $berandaItem->tanggal }}</p>
                 </div>
                 <div class="project-location">
-                 <img src="{{ url('images/location.png') }}" alt="" />
-                  <p>{{ $berandaItem->lokasi }}</p>
+                 <img style="margin-bottom: 20px;" src="{{ url('images/location.png') }}" alt="" />
+                  <p style="margin-bottom: 20px;">{{ $berandaItem->lokasi }}</p>
                 </div>
               </div>
             </a>
