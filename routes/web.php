@@ -41,6 +41,24 @@ Route::post('/kontak/store', [App\Http\Controllers\KontakController::class, 'sto
 
 Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
 
+Route::get('/storage-link', function() {
+    $targetFolder = storage_path('app/public');
+    $linkFolder = $_SERVER['DOCUMENT_ROOT'] . '/storage';
+
+    // Remove existing symlink if it exists and is a directory
+    if (is_link($linkFolder) || is_dir($linkFolder)) {
+        rmdir($linkFolder);
+    }
+
+    // Create the symlink
+    if (symlink($targetFolder, $linkFolder)) {
+        return 'Symlink created successfully.';
+    } else {
+        return 'Failed to create symlink.';
+    }
+});
+
+
 
 
 Route::prefix('admin')
