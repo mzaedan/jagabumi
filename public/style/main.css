@@ -293,8 +293,9 @@ nav > .nav-header {
 .project-location p {
     word-wrap: break-word; /* Memastikan teks terbungkus dengan benar */
     word-break: break-all; /* Memastikan teks tidak melampaui batas card */
+    overflow: hidden; /* Menyembunyikan teks yang melampaui batas */
+    max-width: 90%; /* Membatasi lebar teks ke lebar container */
 }
-
 
 .project-description > h3,
 .project-location > p > img,
@@ -303,15 +304,26 @@ nav > .nav-header {
 }
 
 /* Media Queries */
+@media (max-width: 1280px) {
+    .project-location p {
+        word-wrap: break-word; /* Memastikan teks terbungkus dengan benar */
+        word-break: break-word; /* Memastikan kata dipecah di tempat yang cocok */
+        overflow: hidden; /* Menyembunyikan teks yang melampaui batas */
+        text-overflow: ellipsis; /* Menambahkan elipsis untuk teks yang melampaui batas */
+        max-width: 90%; /* Membatasi lebar teks ke lebar container */
+    }
+}
+
 @media (max-width: 1024px) {
     .project-item {
         flex-basis: calc(33.333% - 30px); /* 33.333% for smaller screens */
     }
     .project-location p {
         word-wrap: break-word; /* Memastikan teks terbungkus dengan benar */
-        word-break: break-all; /* Memastikan teks tidak melampaui batas card */
-        overflow: hidden;
-        text-overflow: ellipsis;
+        word-break: break-word; /* Memastikan kata dipecah di tempat yang cocok */
+        overflow: hidden; /* Menyembunyikan teks yang melampaui batas */
+        text-overflow: ellipsis; /* Menambahkan elipsis untuk teks yang melampaui batas */
+        max-width: 90%; /* Membatasi lebar teks ke lebar container */
     }
 }
 
@@ -340,11 +352,13 @@ nav > .nav-header {
         display: flex;
         align-items: center;
     }
+
     .project-location p {
         word-wrap: break-word; /* Memastikan teks terbungkus dengan benar */
-        word-break: break-all; /* Memastikan teks tidak melampaui batas card */
-        overflow: hidden;
-        text-overflow: ellipsis;
+        word-break: break-word; /* Memastikan kata dipecah di tempat yang cocok */
+        overflow: hidden; /* Menyembunyikan teks yang melampaui batas */
+        text-overflow: ellipsis; /* Menambahkan elipsis untuk teks yang melampaui batas */
+        max-width: 90%; /* Membatasi lebar teks ke lebar container */
     }
 }
 
@@ -939,8 +953,6 @@ a.tbl-hijau:hover {
     background-image: url("../image/twitter.svg");
 }
 
-
-
 @media (max-width: 1400px) {
     #jumbotron-illustration > img {
         width: 90%;
@@ -1121,7 +1133,7 @@ a.tbl-hijau:hover {
         padding: 60px;
     }
 
-    .berita-container .berita-card{
+    .berita-container .berita-card {
         width: 100%;
     }
 
@@ -1134,29 +1146,29 @@ a.tbl-hijau:hover {
 
     .project-location p {
         word-wrap: break-word; /* Memastikan teks terbungkus dengan benar */
-        word-break: break-all; /* Memastikan teks tidak melampaui batas card */
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .berita-section {
-        padding: 15px;
+        word-break: break-word; /* Memastikan kata dipecah di tempat yang cocok */
+        overflow: hidden; /* Menyembunyikan teks yang melampaui batas */
+        text-overflow: ellipsis; /* Menambahkan elipsis untuk teks yang melampaui batas */
+        max-width: 90%; /* Membatasi lebar teks ke lebar container */
     }
 
-    .project-item {
-        min-height: 450px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+    @media (max-width: 768px) {
+        header > nav {
+            z-index: 2;
+            background-color: #5bbe82;
+        }
 
-    .project-location p {
-        word-wrap: break-word; /* Memastikan teks terbungkus dengan benar */
-        word-break: break-all; /* Memastikan teks tidak melampaui batas card */
-        overflow: hidden;
-        text-overflow: ellipsis;
+        .project-item {
+            flex-basis: calc(50% - 30px); /* 50% for even smaller screens */
+            z-index: 1;
+        }
+
+        .project-location p {
+            word-wrap: break-word; /* Memastikan teks terbungkus dengan benar */
+            word-break: break-all; /* Memastikan teks tidak melampaui batas card */
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     }
 }
 
@@ -1222,7 +1234,7 @@ a.tbl-hijau:hover {
         padding: 15px;
     }
 
-    .berita-container .berita-card{
+    .berita-container .berita-card {
         width: 100%;
     }
 
@@ -1254,7 +1266,7 @@ a.tbl-hijau:hover {
         padding: 15px;
     }
 
-    .berita-container .berita-card{
+    .berita-container .berita-card {
         width: 100%;
     }
 
@@ -1286,7 +1298,7 @@ a.tbl-hijau:hover {
         padding: 15px;
     }
 
-    .berita-container .berita-card{
+    .berita-container .berita-card {
         width: 100%;
     }
 
