@@ -23,6 +23,7 @@
                 <habitant class="berita-quote">
                     <p>{!! $beritaItem->deskripsi !!}</p>
                 <br>
+                <a href="{{ route('user.berita.index') }}" class="btn" style="background-color: #5bbe82; color: white;">Kembali</a>
             </div>
         </div>
     </section>
