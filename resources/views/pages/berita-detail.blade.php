@@ -15,7 +15,10 @@
                 <img src="{{ Storage::url($beritaItem->foto) }}" alt="Headline Berita" class="berita-image" />
                 <span style="color: #5bbe82;">{{ $beritaItem->tanggal }}</span>
                 <h3 class="berita-name">{{ $beritaItem->judul_berita }}</h3>
-                <h5 class="berita-loc"><i class="fa-solid fa-location-dot"  style="color: #5bbe82;"></i> {{ $beritaItem->lokasi }} - <span>{{ $beritaItem->penulis }}</span></h5>
+                <h5 class="berita-loc">
+                    <i class="fa-solid fa-location-dot"  style="color: #5bbe82; margin-bottom: 13px"></i> {{ $beritaItem->lokasi }} <br> 
+                    <i class="fa-regular fa-user" style="color: #5bbe82;"></i><span> {{ $beritaItem->penulis }}</span>
+                </h5>
                 
                 <habitant class="berita-quote">
                     <p>{!! $beritaItem->deskripsi !!}</p>
