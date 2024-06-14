@@ -230,7 +230,8 @@ nav > .nav-header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    height: 400px;
+    width: 250px; /* Lebar tetap */
 }
 
 .project-item > a {
