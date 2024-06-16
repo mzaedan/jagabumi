@@ -12,10 +12,10 @@ Jaga Bumi hadir sebagai platform online yang menghubungkan perusahaan sosial dan
 
 
 ## Dokumen
-- [Project Brief](https://docs.google.com/document/d/1BKAL7HBaoyeZ4x-YyRIY379EO1ukGdF32pBLJCuAbKM/edit?usp=sharing)
-- [Working Doc](https://docs.google.com/document/d/1su4x1RqE7LkzMH5yu8X3ChkuGQpmPAoUumzToc_4E7s/edit)
-- [User Guide](https://docs.google.com/document/d/1ogVoFdZ728NlvFcpasqjhgFSZlWBaPznjKBFcr45knk/edit?usp=sharing )
-- [Slide Presentasi](https://docs.google.com/presentation/d/1wvEeG14pleMrxyj1Rg3x_d3xvbwXfz6rTbo4PCXG60E/edit?usp=sharing )
+- [Project Brief](https://docs.google.com/document/d/18Fl9xWqlEK1ebvOtWya91-CxrNx5wYSqbGYlbL7cQ1M/edit?usp=sharing)
+- [Working Doc](https://docs.google.com/document/d/110iCMACEUnrTXaH_8vvDvXZCVLR0uL49kVHCx3lQmSw/edit?usp=sharing)
+- [User Guide](https://docs.google.com/document/d/1jaBlkGagBt8d405NqcGvL_kREDkzJxhL8tDkQX02quc/edit?usp=sharing)
+- [Slide Presentasi](https://docs.google.com/presentation/d/1JZyLhxaIUU5TD17BHkgQ6embDhjs9PlQhEHIqY1fHmc/edit?usp=sharing)
 - [Video Presentasi](https://youtu.be/oaDmvAjFuJ8)
 - [Video Demo Aplikasi](https://youtu.be/N7kCYcRSQg0)
 
