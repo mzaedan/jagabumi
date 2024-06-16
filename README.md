@@ -40,18 +40,22 @@ Jaga Bumi hadir sebagai platform online yang menghubungkan perusahaan sosial dan
 ```bash
   composer update
 ```
-4. Setup database mySQL di local
-5. Copy + Paste .env.example lalu rename menjadi .env
-6. Generate `APP_KEY` pada file .env dengan
+3. Setup database mySQL di local
+4. Copy + Paste .env.example lalu rename menjadi .env
+5. Generate `APP_KEY` pada file .env dengan
 ```bash
   php artisan key:generate
 ```
-8. Konfigurasi `DB_DATABASE` `DB_USERNAME` `DB_PASSWORD` di file .env
-9. Jalankan seeder database
+6. Konfigurasi `DB_DATABASE` `DB_USERNAME` `DB_PASSWORD` di file .env
+7. Jalankan seeder database
 ```bash
   php artisan migrate:fresh --seed
 ```
-9. Buat link storage ke public directory
+8. Buat link storage ke public directory
 ```bash
   php artisan storage:link
+```
+9. Jalankan server local
+```bash
+  php artisan serve
 ```
