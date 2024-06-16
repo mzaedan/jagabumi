@@ -230,8 +230,8 @@ nav > .nav-header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 400px;
-    width: 250px; /* Lebar tetap */
+    height: 380px;
+    width: 260px; /* Lebar tetap */
 }
 
 .project-item > a {
@@ -241,7 +241,7 @@ nav > .nav-header {
 
 .project-item > a > img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
     border-radius: 5px 5px 0px 0px;
 }
