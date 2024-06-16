@@ -1,4 +1,4 @@
-<p align="center"><a href="https://jagabumi.masuk.id/" target="_blank"><img src="https://raw.githubusercontent.com/CodeWithRey/satu-hati/master/public/assets/images/logo-no-text.png" width="400" alt="Jaga Bumi Logo"></a></p>
+<p align="center"><a href="https://jagabumi.masuk.id/" target="_blank"><img src="https://github.com/mzaedan/jagabumi/blob/master/public/images/logo.png" width="400" alt="Jaga Bumi Logo"></a></p>
 
 <h1 align="center"><b>Jaga Bumi - Bersama Kita Bisa Menyelamatkan Bumi dan Indonesia</b></h1>
 
