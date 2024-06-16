@@ -471,6 +471,7 @@ progress {
 
 .news-text a {
     color: #0f0f0f;
+    text-decoration: none;
 }
 
 .news-text a:hover {

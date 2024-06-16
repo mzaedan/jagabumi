@@ -20,7 +20,7 @@
                     <img src="{{ Storage::url($beritaItem->foto) }}" />
                 </div>
                 <div class="news-text">
-                    <span>{{ $beritaItem->tanggal }}</span>
+                    <span>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $beritaItem->tanggal)->format('d-m-Y') }}</span>
                     <a href="{{ url('/berita/' . $beritaItem->slug) }}" class="card-title"
                     >{{ $beritaItem->judul_berita }}</a
                     >
